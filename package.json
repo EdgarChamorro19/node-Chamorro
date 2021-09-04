@@ -1,12 +1,36 @@
 {
-  "name": "node-chamorro",
+  "name": "chamorro",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build":"babel source --out-dir build",
+    "dev":"nodemon source/index.js --exec babel-node",
+    "start":"node source/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EdgarChamorro19/node-Chamorro.git"
   },
   "keywords": [],
-  "author": "Edgar Chamorro",
-  "license": "ISC"
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EdgarChamorro19/node-Chamorro/issues"
+  },
+  "homepage": "https://github.com/EdgarChamorro19/node-Chamorro#readme",
+  "dependencies": {
+    "@babel/cli": "^7.15.4",
+    "@babel/core": "^7.15.4",
+    "@babel/node": "^7.15.4",
+    "@babel/preset-env": "^7.15.4",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.4",
+    "morgan": "^1.10.0"
+  }
 }
