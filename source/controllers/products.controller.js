@@ -10,18 +10,20 @@ export const createProduct= async (req,res) =>{
     res.status(201).json(productSaved)
 }
 
-export const getProducts= (req,res) =>{
-    res.json('Obtener Producto')
+export const getProducts= async (req,res) =>{
+    const products= await Product.find()
+    res.json(products)
 }
 
-export const getProductsById= (req,res) =>{
+export const getProductsById= async (req,res) =>{
+    const product = await Product.findById(req.params.productId)
+    res.status(200).json(product)
+}
+
+export const updateProductsById= async (req,res) =>{
 
 }
 
-export const updateProductsById= (req,res) =>{
-
-}
-
-export const deleteProductsById= (req,res) =>{
+export const deleteProductsById= async (req,res) =>{
 
 }
