@@ -1,6 +1,6 @@
 import {Schema,model} from 'mongoose'
 
-new Schema({
+const userschema=new Schema({
     username:{
         type: String,
         unique:true
@@ -13,5 +13,13 @@ new Schema({
         type:String,
         required:true
     },
-    roels:[]
+    roels:[{
+        ref:"Role",
+        type:Schema.Types.ObjectId
+    }]
+},{
+    timestamps:true,
+    versionKey:false
 })
+
+export default userschema
